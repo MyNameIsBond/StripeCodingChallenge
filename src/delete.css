@@ -1,0 +1,14 @@
+.globalNav.compact .navRoot {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.globalNav.compact .navSection.logo {
+  position: static;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+.globalNav.compact .navSection.secondary {
+  position: static;
+}

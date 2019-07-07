@@ -1,23 +1,187 @@
+$textColor : #fff
+$medium: 800px // The breakpoint for medium screen
+$mobile: 680px// Mobile mode
 body
     margin: 0px
+    background-color: rgba(0,0,0,0.3)
     -webkit-font-asmoothing: antiliased
-    respective: 2000px
+    box-sizing: border-box
 header
+    box-sizing: border-box
+    respective: 2000px
+    display: block
     position: absolute
-    top: 10px
     height: 50px
-    background-color: lightgrey
     width: 100%
+    color: inherit
     div
+        color: $textColor
+        padding: 0px
+        width: 100%
+        margin: 0px auto
+        max-width: 1040px
         nav
+            position: relative
+            display: block
+            padding: 0
+            margin: 0
+            .burgerMenu
+                display: none
+                @media screen and (max-width: $mobile)
+                    display: block
+                    cursor: pointer
+                    position: absolute
+                    top: 20px
+                    right: 20px
+                    height: 50px
+                    width: 50px
+                    svg
+                        font-size: 50px
+                        justify-self: center
+                        
             ul
-                padding: 0px
+                padding: 0
+                margin: 0
+                @media screen and (max-width: $medium)
+                    display: flex
+                .logo
+                    position: absolute
+                    top: 6px
+                    left: 0
+                    @media screen and (max-width: $medium)
+                        padding-top: 6px
+                        flex-grow: 1
+                        position: static
                 li
                     padding: 0px
                     display: inline-block
                 .signIn
+                    position: absolute
+                    right: 0
+                    top: 35px
+                    @media screen and (max-width: $medium)
+                        padding-top: 35px
+                        position: static
+                    a
+                        color: inherit
+                        font-size: 1em
+                        padding: 10px
+                        margin: 5px
+                    @media screen and (max-width: $mobile)
+                        display: none
                 .navButtons
+                    padding-top: 10px
+                    justify-content: center
+                    display: flex
             button
+                border: 0
+                margin: 0.8em 
+                font-size: 1em
                 background-color: inherit
+                padding: 10px calc(-17.16247px + 4.0541vw)
+                color: inherit
+                @media screen and (max-width: $mobile)
+                    display: none
             h1
-                color: black
+                color: inherit
+                padding-left: 20px
+                font-weight: bolder
+
+// Mobile Navigation bar Is being triggered through the Burger Menu Icon - Button
+
+.mobileNavBar
+    box-shadow: 0 50px 100px -20px rgba(50,50,93,.25), 0 30px 60px -30px rgba(0,0,0,.3), 0 -18px 60px -10px rgba(0,0,0,.025)
+    height: 530px
+    width: 95%
+    position: absolute
+    top: 10px
+    left: 8px
+    margin: 0px auto
+    border-radius: 5px
+    background-color: white
+    display: grid
+    grid-template-columns: 100%
+    grid-template-rows: 270px 200px 60px
+    .products
+        border-bottom: solid 1px rgb(246, 246, 246)
+        display: grid
+        grid-auto-flow: column
+        grid-template-columns: 38% 60%
+        grid-template-rows: repeat(5, 50px)
+        .productsTitle
+            grid-column: span 2
+            color: grey
+            p
+                padding: 16px 26px
+                font-size: 0.8em
+                letter-spacing: .1em
+            svg
+                position: absolute
+                right: 10px
+                top: 10px
+                grid-column: span 2
+                z-index: 99
+                font-size: 30px
+                cursor: pointer
+            svg:hover
+                color: #32325d !important
+                
+        .productsLinks
+            letter-spacing: .05em
+            display: grid
+            cursor: pointer
+            grid-template-columns: 20% auto
+            grid-column-gap: 5px
+            svg
+                justify-self: end
+                align-self: center
+                font-size: 35px
+            p
+                font-size: 1.1em
+        .productsLinks:hover
+            svg
+                color: #32325d !important
+            p
+                color: #32325d !important
+    .secondaryNav
+        padding-top: 10px
+        display: grid
+        color: #6772e5
+        grid-template-rows: repeat(4, 40px)
+        grid-template-columns: 40% 60%
+        grid-auto-flow: column
+        cursor: pointer
+        p
+            padding-left: 30px
+            font-size: 17px
+            letter-spacing: .04em
+        p:hover
+            color: #32325d
+    .navMobileFooter
+        display: grid
+        grid-template-columns: 80px 100px
+        grid-template-rows: auto
+        cursor: pointer
+        background-color: #f6f9fc
+        border-bottom-left-radius: 5px
+        border-bottom-right-radius: 5px
+        p
+            margin: 0px
+            color: #6772e5 
+            justify-self: end
+            align-self: center
+            font-weight: bold
+            letter-spacing: 0.05em
+        svg
+            justify-self: start
+            font-size: 18px
+            color: #6772e5 
+            align-self: center
+    .navMobileFooter:hover
+        p
+            color: #32325d
+        svg
+            color: #32325d
+
+
+
