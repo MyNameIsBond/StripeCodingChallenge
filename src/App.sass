@@ -1,11 +1,16 @@
 $textColor : #fff
 $medium: 800px // The breakpoint for medium screen
-$mobile: 680px// Mobile mode
+$mobile: 710px// Mobile mode
+$shadow: 0 50px 100px -20px rgba(50,50,93,.25), 0 30px 60px -30px rgba(0,0,0,.3), 0 -18px 60px -10px rgba(0,0,0,.025)
+$navLinksColour: #6772e5
+$hoverLinkColour: #32325d
 body
     margin: 0px
-    background-color: rgba(0,0,0,0.3)
+    background-color: #53f
     -webkit-font-asmoothing: antiliased
     box-sizing: border-box
+    font-weight: 400
+    font-style: normal
 header
     box-sizing: border-box
     respective: 2000px
@@ -75,10 +80,11 @@ header
                     display: flex
             button
                 border: 0
+                cursor: pointer
                 margin: 0.8em 
                 font-size: 1em
                 background-color: inherit
-                padding: 10px calc(-17.16247px + 4.0541vw)
+                padding: 10px 14px
                 color: inherit
                 @media screen and (max-width: $mobile)
                     display: none
@@ -90,7 +96,7 @@ header
 // Mobile Navigation bar Is being triggered through the Burger Menu Icon - Button
 
 .mobileNavBar
-    box-shadow: 0 50px 100px -20px rgba(50,50,93,.25), 0 30px 60px -30px rgba(0,0,0,.3), 0 -18px 60px -10px rgba(0,0,0,.025)
+    box-shadow: $shadow
     height: 530px
     width: 95%
     position: absolute
@@ -125,7 +131,6 @@ header
                 cursor: pointer
             svg:hover
                 color: #32325d !important
-                
         .productsLinks
             letter-spacing: .05em
             display: grid
@@ -146,7 +151,7 @@ header
     .secondaryNav
         padding-top: 10px
         display: grid
-        color: #6772e5
+        color: $navLinksColour
         grid-template-rows: repeat(4, 40px)
         grid-template-columns: 40% 60%
         grid-auto-flow: column
@@ -167,7 +172,7 @@ header
         border-bottom-right-radius: 5px
         p
             margin: 0px
-            color: #6772e5 
+            color: $navLinksColour 
             justify-self: end
             align-self: center
             font-weight: bold
@@ -175,7 +180,7 @@ header
         svg
             justify-self: start
             font-size: 18px
-            color: #6772e5 
+            color: $navLinksColour 
             align-self: center
     .navMobileFooter:hover
         p
@@ -183,5 +188,101 @@ header
         svg
             color: #32325d
 
+            
+            
+.productsHover
+    background-color: red
+    height: 600px
+    width: 55%
+    box-shadow: $shadow
+    margin-left: 10px
+.developerHover
+    background-color: white
+    height: 426px
+    width: 432px
+    box-shadow: $shadow
+    margin-left: 130px
+.companyHover
+    background-color: white
+    color: black
+    height: 466px
+    width: 432px
+    border-radius: 5px
+    box-shadow: $shadow
+    margin-left: 35%
+    padding-top: 10px
+    display: grid
+    overflow: hidden
+    grid-template-columns: 100%
+    grid-template-rows: 58% 42%
+    .companyMain
+        grid-row: 1
+        grid-column: 1
+        display: grid
+        grid-template-columns: 13% 60%
+        padding-left: 10px
+        padding-top: 10px
+        grid-template-rows: repeat(6,40px)
+        svg
+            justify-self: center
+            align-self: center
+            color: $navLinksColour
+        p
+            font-weight: bold
+            letter-spacing: 0.02em
+            align-self: center
+            color: $navLinksColour
+            justify-self: start
+            cursor: pointer
+        p:hover
+            color: $hoverLinkColour !important
+
+    .companySub
+        padding-left: 10px
+        padding-top: 10px
+        grid-row: 2
+        background-color: rgb(246, 246, 246)
+        display: grid
+        grid-template-rows: 27% 58%
+        grid-template-columns: 12% auto
+        border-bottom-right-radius: 5px
+        border-bottom-left-radius: 5px
+        > p
+            color: #6772e5
+            align-self: end
+            justify-self: start
+
+        > svg
+            justify-self: center
+            padding-left: 5px
+            align-self: center
+            color: $navLinksColour
+        .companyHoverContent
+            grid-column: span 2
+            display: grid
+            cursor: pointer
+            align-content: center
+            justify-content: center
+            grid-template-columns: 70% auto
+            grid-template-rows: repeat(3, 30px)
+            p:hover 
+                color: $hoverLinkColour !important
+            p
+                align-self: center
+                color: $navLinksColour
+            svg
+                color: $navLinksColour
 
 
+
+            
+    .arrow
+        grid-row: 1
+        height: 20px
+        position: absolute
+        transform: rotate(45deg)
+        z-index: -1
+        top: 65px
+        left: 520px
+        width: 20px
+        background-color: inherit

@@ -3,6 +3,8 @@ import Menu from '@material-ui/icons/Menu'
 import Fiber from '@material-ui/icons/FiberManualRecord'
 import Clear from '@material-ui/icons/Clear'
 import Arrow from '@material-ui/icons/ArrowForward'
+import RightArrow from '@material-ui/icons/KeyboardArrowRight'
+import { thisExpression } from '@babel/types'
 
 const mobileNav = [
   { title: 'Payments', color: '#6772e5' },
@@ -29,14 +31,69 @@ export default class NavBar extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      mobileMenu: false
+      mobileMenu: false,
+      products: false,
+      developers: false,
+      company: false
     }
   }
+  companyCard = () => (
+    <div
+      className="companyHover"
+      onMouseLeave={() => {
+        this.setState({ company: false })
+      }}
+    >
+      <div className="arrow" />
+      <div className="companyMain">
+        <Fiber />
+        <p>ABOUT STRIPE</p>
+        <Fiber />
+        <p>COSTONERS</p>
+        <Fiber />
+        <p>PARTNER PROGRAM</p>
+        <Fiber />
+        <p>JOBS</p>
+        <Fiber />
+        <p>ENVIROMENT</p>
+        <Fiber />
+        <p>NEWSROOM</p>
+      </div>
+      <div className="companySub">
+        <Fiber />
+        <p>FROM THE BLOG</p>
+        <div className="companyHoverContent">
+          <p className="textHoverContent">A new and improved onboarding flow for E...</p>
+          <RightArrow className="iconsHoverContent" />
+          <p className="textHoverContent">Sorbet is now open source</p>
+          <RightArrow className="iconsHoverContent" />
+          <p className="textHoverContent">Stripe Terminal is now generally available i...</p>
+          <RightArrow className="iconsHoverContent" />
+        </div>
+      </div>
+    </div>
+  )
+
+  developersCard = () => (
+    <div
+      className="developerHover"
+      onMouseLeave={() => {
+        this.setState({ developers: false })
+      }}
+    >
+      <div className="developersTitle">
+        <Fiber />
+      </div>
+      <div className="developersMain">s</div>
+      <div className="developersFooter">s</div>
+    </div>
+  )
+
   handleMobileMenu() {
     this.setState({ mobileMenu: !this.state.mobileMenu })
   }
   render() {
-    const { mobileMenu } = this.state
+    const { mobileMenu, products, developers, company } = this.state
     return (
       <header>
         <div>
@@ -46,9 +103,27 @@ export default class NavBar extends Component {
                 <h1>Stripe</h1>
               </li>
               <li className="navButtons">
-                <button>Products</button>
-                <button>Developers</button>
-                <button>Company</button>
+                <button
+                  onMouseEnter={() => {
+                    this.setState({ products: true, company: false, developers: false })
+                  }}
+                >
+                  Products
+                </button>
+                <button
+                  onMouseEnter={() => {
+                    this.setState({ products: false, company: false, developers: true })
+                  }}
+                >
+                  Developers
+                </button>
+                <button
+                  onMouseEnter={() => {
+                    this.setState({ products: false, company: true, developers: false })
+                  }}
+                >
+                  Company
+                </button>
                 <button>Pricing</button>
               </li>
               <li className="signIn">
@@ -95,6 +170,22 @@ export default class NavBar extends Component {
                 </div>
               </div>
             ) : null}
+            {products ? (
+              <div
+                className="productsHover"
+                onMouseLeave={() => {
+                  this.setState({ products: false })
+                }}
+              >
+                <ul>
+                  <li>
+                    <h2>Product</h2>
+                  </li>
+                </ul>
+              </div>
+            ) : null}
+            {developers ? this.developersCard() : null}
+            {company ? this.companyCard() : null}
           </nav>
         </div>
       </header>
