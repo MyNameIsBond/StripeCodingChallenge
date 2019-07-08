@@ -12,7 +12,7 @@
 <hr />
 <ul>
   <li>
-    from terminal ' git clone https://github.com/MyNameIsBond/codeChallengeMitionHajdini.git '
+    from terminal ' git clone https://github.com/MyNameIsBond/StripeCodingChallenge.git'
   </li>
   <li>after is being cloned move to the file by using $cd</li>
   <li>make sure you have react installed if not, install it from https://react-cn.github.io/react/downloads.html</li>
@@ -28,7 +28,14 @@
   </li>
 </ul>
 <br />
-
+<h3>What I could have done better if I had more time</h3>
+<hr />
+<ul>
+  <li>I would make a better codumentation</li>
+  <li>
+    I would have cleared the code on react
+  </li>
+</ul>
 <h3>If you can't make it work don't worry</h3>
 <p>bellow you will find a video-demonstration on how it looks
  https://1drv.ms/v/s!AiVsWJtak2iMg_UJUGKuu4bnX77P9w?e=MAgVSe
