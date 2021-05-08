@@ -41,5 +41,3 @@
  https://1drv.ms/v/s!AiVsWJtak2iMg_UJUGKuu4bnX77P9w?e=MAgVSe
 </p>
 <br>
-
-<small>Name: Mition Hajdini</small>
